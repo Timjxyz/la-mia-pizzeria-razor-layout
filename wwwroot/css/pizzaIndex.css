@@ -1,4 +1,10 @@
-﻿header{
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
     position:fixed;
     width:100%;
     top:0;
@@ -29,6 +35,3 @@ body {
     padding-top: 100px;
 }
 
-footer{
-    display:none;
-}
