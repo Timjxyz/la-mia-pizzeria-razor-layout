@@ -17,7 +17,19 @@ Stampare il nostro nome e cognome all'interno di un tag h2.*@
 Stampare dentro uno span il risultato.*@
 <h1>Secondo Esercizio</h1>
 
+@{
+    int Somma(int a)
+    {
+        int somma = 0;
+        for(int i= 1; i <= a; i++)
+        {
+            somma += i;
+        }
+        return somma;
+    }
+}
 
+<h4>@Somma(100)</h4>
 
 
 //////////////////////////////////////////////////////////
@@ -45,7 +57,7 @@ e mostrare in pagina solo i numeri compresi tra 20 e 70*@
 }
  @foreach(int numero in numeriRandom){
         @if(numero>= 20 && numero <= 70){
-            <span>@numero</span>
+            <span><strong>@numero</strong></span>
         }
        
  }
@@ -69,12 +81,12 @@ c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un
 
 <h2>A) Stampa la data di 7 giorni fa</h2>
 
-<h4> Stampo ora e giorno @DateTime.Today.AddDays(-7).ToString("dd/MM/yyyy")</h4>
-
+<h4> Stampo la data di 7 giorni fa @DateTime.Today.AddDays(-7).ToString("dd/MM/yyyy")</h4>
+***********************************************************************
 <h2>B) Stampa Giorno della settimana</h2>
 
 <h4> Today is @DateTime.Today.DayOfWeek</h4>
-
+***********************************************************************
 <h2>C) Stampa Giorno della settimana tra un anno</h2>
 
 <h4> Stampo giorno ella settimana tra un anno @DateTime.Today.AddDays(365).DayOfWeek</h4>
