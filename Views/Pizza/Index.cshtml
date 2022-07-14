@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Lista Pizze";
+}
+
+@{
+    List<Pizza> pizzas = new List<Pizza>();
+    pizzas.Add(new Pizza("Bufalina", "/img/pizza-buffala-prosciutto.jpg", "Pomodoro, Mozzarella di Bufala Campana DOP, Prosciutto Crudo di San Daniele",10));
+    pizzas.Add(new Pizza("Triveneto", "/img/pizza-con-pancetta.jpg", "Pomodoro, Mozzarella, Pancetta, Radicchio di Treviso",9.50));
+    pizzas.Add(new Pizza("Diavola", "/img/pizza-Diavola.jpg", "Pomodoro, Mozzarella, Salamino Piccante",8.50));
+    pizzas.Add(new Pizza("Estate", "/img/pizza-estate.jpg", "Pomodoro, Mozzarella, Ruccola, Pomodorini, Grana",12));
+    pizzas.Add(new Pizza("Mortadella, Pistacchio, Stracciatella", "/img/pizza-mortadella.jpg", "Pomodoro, Mozzarella, Mortadella, Pistacchio di Bronte, Stracciatella",14));
+    pizzas.Add(new Pizza("Tonno e Cipolla", "/img/pizza-tonno-cipolla.jpg", "Pomodoro, Mozzarella, Tonno, Cipolla",7));
+    
+}
+
+<link rel="stylesheet" href="~/css/ms-site.css" asp-append-version="true" />
+<div class="ms-bg">
+
+    <div class="text-center my-5">
+        <h1 class="text-white">Menù pizze</h1>
+       <h3  class="text-white">La nostra selezione di pizze</h3>
+    </div>
+
+
+
+    <div class="row  mb-5 g-4 ">
+        @foreach(Pizza pizza in pizzas)
+        {
+            <div class="col-12 col-sm-6 col-xl-4">
+            
+                <div class="card ms-height">
+                  <img class="card-img-top" src="@pizza.Img" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">@pizza.Name</h5>
+                    <p class="card-text">@pizza.Description</p>
+                     <p class="card-text">Prezzo: @pizza.Price €</p>
+                    <button  type="button" class="btn btn-success">Aggiungi</button>
+                    <button  type="button" class="btn btn-danger">Rimuovi</button>
+                  </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
